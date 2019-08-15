@@ -1,0 +1,67 @@
+
+# http://localhost:3000/graphql
+
+# add books
+mutation {
+  addBook(
+    isbn: "12345678",
+    title: "Whatever this Book Title",
+    author: "Mr. Bean",
+    description: "The short explanation of this Book",
+    publisher: "Djamware Press",
+    published_year: 2019
+  ) {
+    updated_date
+  }
+}
+
+mutation {
+  addBook(
+    isbn: "6666666",
+    title: "Sample Title 1",
+    author: "Sample Author 1",
+    description: "Sample Description 1",
+    publisher: "Sample Publisher 1",
+    published_year: 2019
+  ) {
+    updated_date
+  }
+}
+
+
+# find all books 
+{
+  books {
+    _id,
+    isbn,
+    title,
+    author,
+    description
+  }
+}
+
+
+# update a book by id
+mutation {
+  updateBook(
+    id: "5d551b0de4e26a4c8db05e61",
+    isbn: "44444",
+    title: "Sample Title 2",
+    author: "Sample Author 2.",
+    description: "Sample Description 2",
+    publisher: "Sample Publisher 2",
+    published_year: 2010
+  ) {
+    _id,
+    updated_date
+  }
+}
+
+
+
+# delete book by id
+mutation {
+  removeBook(id:"5d551b0de4e26a4c8db05e61") {
+    _id
+  }
+}

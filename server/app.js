@@ -10,8 +10,9 @@ var usersRouter = require('./routes/users');
 var mongoose = require('mongoose');
 
 var graphqlHTTP = require("express-graphql");
-var schema = require("./graphql/bookSchema");
+var schema = require("./graphql/schema");
 var cors = require("cors");
+var workerSchema = require("./graphql/workerSchema");
 
 
 mongoose.connect('mongodb://localhost/node-graphql', { promiseLibrary: require('bluebird'), useNewUrlParser: true })
